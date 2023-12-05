@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Médias Escolares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Escola Aprendendo JavaScript</h1>
+        <h2>Calculadora de média</h2>
+    </header>
+
+    <main>
+        <div class="painel">
+            <section>
+                <p>Informe a nota dos dois trabalhos:</p>
+                <div class="nota">
+                    <input type="number" name="trabalho1" id="trabalho1">
+                    <input type="number" name="trabalho2" id="trabalho2">
+                    <input type="button" value="Calcular" onclick="calcular1()">
+                </div>
+                    <div class="mediatrabalho notaJS"></div>
+            </section>
+
+            <section>
+                <p>Informe a nota das tarefas de casa:</p>
+                <div class="nota">
+                    <input type="number" name="tarefa1" id="tarefa1">
+                    <input type="number" name="tarefa2" id="tarefa2">
+                    <br>
+                    <input type="number" name="tarefa3" id="tarefa3">
+                    <input type="number" name="tarefa4" id="tarefa4">
+                    <input type="button" value="Calcular" onclick="calcular2()">
+                </div>
+                    <div class="mediatarefa notaJS"></div>
+            </section>
+
+            <section>
+                <p>Média dos Trabalhos e Tarefas:</p>
+                <div class="mediaTeT notaJS"></div>
+            </section>
+
+            <section>
+                <p>Informe a nota das avaliações do bimestre:</p>
+                <div class="nota">
+                    <input type="number" name="avaliacao1" id="avaliacao1">
+                    <input type="number" name="avaliacao2" id="avaliacao2">
+                    <input type="button" value="Calcular" onclick="calcular3()">
+                </div>
+            </section>
+
+            <section>
+                <p>Média do Bimestre:</p>
+                <div class="nota">
+                    <div id="mediafinal" class="notaJS"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+
+    <script>
+        var mediatrf = (trf1 + trf2 + trf3 + trf4) / 4
+        var mediat = (t1 + t2) / 2
+        var mediaTeT = (mediatrf + mediat) / 2
+
+        function calcular1() {
+
+            //TRABALHOS
+
+            var trabalho1 = window.document.getElementById('trabalho1')
+            var trabalho2 = window.document.getElementById('trabalho2')
+
+            var t1 = Number.parseInt(trabalho1.value)
+            var t2 = Number.parseInt(trabalho2.value)
+
+            var mediat = (t1 + t2) / 2
+
+            var mediatrabalho = window.document.querySelector('div.mediatrabalho')
+            
+            mediatrabalho.innerHTML = `A média de trabalho é igual a <strong>${mediat}</strong>`
+        }
+
+        function calcular2() {
+            
+            //TAREFAS
+            
+            var tarefa1 = window.document.getElementById('tarefa1')
+            var tarefa2 = window.document.getElementById('tarefa2')
+            var tarefa3 = window.document.getElementById('tarefa3')
+            var tarefa4 = window.document.getElementById('tarefa4')
+            
+            var trf1 = Number.parseInt(tarefa1.value)
+            var trf2 = Number.parseInt(tarefa2.value)
+            var trf3 = Number.parseInt(tarefa3.value)
+            var trf4 = Number.parseInt(tarefa4.value)
+            
+            var mediatrf = (trf1 + trf2 + trf3 + trf4) / 4
+            
+            var mediatarefa = window.document.querySelector('div.mediatarefa')
+            
+            mediatarefa.innerHTML = `A média de tarefas é igual a <strong>${mediatrf}</strong>`
+            
+            // MEDIA TRABALHO E TAREFAS
+            
+            var mediaTeT = (mediatrf + mediat) / 2
+            
+            var mediaT1 = window.document.querySelector('div.mediaTeT')
+            
+            mediaT1.innerHTML = `A média dos trabalhos e tarefas é igual a <strong>${mediaTeT}</strong>`
+        }
+            
+        function calcular3() {
+            
+            // AVALIAÇÕES
+            
+            var avaliacao1 = document.getElementById('avaliacao1')
+            var avaliacao2 = document.getElementById('avaliacao2')
+            
+            var AV1 = Number.parseFloat(avaliacao1.value)
+            var AV2 = Number.parseFloat(avaliacao2.value)
+            
+            var mediafinal = (AV1 + AV2 + mediaTeT) / 3
+            
+            mediafinal = mediafinal.toFixed(1)
+            
+            var mediaF = document.getElementById('mediafinal')
+            
+            mediaF.innerHTML = `A média bimestral é de <strong>${mediafinal}</strong>`
+        }
+    </script>
+</body>
+</html>
