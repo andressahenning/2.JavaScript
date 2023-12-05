@@ -1,0 +1,51 @@
+body {
+    background: black url(imagens/background.jpg) left no-repeat fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    color: white;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.painel {
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.301);
+    width: 450px;
+    padding: 50px 10px 50px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+
+#seltab {
+    background-color: whitesmoke;
+    text-align: center;
+    border: none;
+    overflow: hidden;
+    margin-left: 175px;
+}
+
+option {
+    padding: 10px;
+}
+
+option:hover{
+    background-color: #F6BF02;
+    border-radius: 5px;
+}
+
+
+footer {
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+}
+
+a {
+    font-style: italic;
+    text-decoration: none;
+    color: white;
+}
